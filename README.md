@@ -22,10 +22,12 @@ Using a grid map with a mesh lib exported from level_object scene. The cube has 
 
 # Hero
 
-Sprite 3D with the billboard flag on
+Animated Sprite 3D rotated like the camera (x -45 and y 45)
 
-Moves controlled with gdscript
+Moves and animations controlled with gdscript
+
 
 # Sources
 
 https://docs.godotengine.org/en/stable/getting_started/first_3d_game/index.html
+https://docs.godotengine.org/en/stable/tutorials/2d/2d_sprite_animation.html
