@@ -22,6 +22,8 @@ Using a grid map with a mesh lib exported from level_object scene. The cube has 
 
 # Hero
 
+Sprite 3D with the billboard flag on
+
 Moves controlled with gdscript
 
 # Sources
