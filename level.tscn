@@ -1,20 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level_mesh_lib.tres" type="MeshLibrary" id=2]
-[ext_resource path="res://default_env.tres" type="Environment" id=3]
+[ext_resource path="res://warp.gd" type="Script" id=3]
+
+[sub_resource type="BoxShape" id=1]
 
 [node name="Spatial" type="Spatial"]
 
 [node name="KinematicBody" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 5, 7 )
-
-[node name="Camera" type="Camera" parent="KinematicBody"]
-transform = Transform( 0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 5.09037, 6.06897, 7.17085 )
-environment = ExtResource( 3 )
-projection = 1
-size = 15.0
-far = 50.0
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 2 )
@@ -25,3 +20,13 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 1, 0 )
 }
+
+[node name="Area" type="Area" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9309, 3.02537, 6.93548 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area" to="Area" method="_on_Area_body_entered"]
+[connection signal="child_entered_tree" from="Area/CollisionShape" to="KinematicBody" method="_on_CollisionShape_child_entered_tree"]
