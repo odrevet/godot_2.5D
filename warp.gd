@@ -10,4 +10,4 @@ func _process(delta):
 
 
 func _on_Area_body_entered(body):
-	get_tree().change_scene("res://level_2.tscn")
+	get_tree().change_scene(destination)
