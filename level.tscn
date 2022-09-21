@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://hero.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level_mesh_lib.tres" type="MeshLibrary" id=2]
 [ext_resource path="res://warp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://textBox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://event.gd" type="Script" id=5]
 
 [sub_resource type="BoxShape" id=1]
@@ -26,12 +27,14 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.150014, 0.290968, 0.0505066 )
 destination = "res://level_2.tscn"
 
-[node name="Area" type="Area" parent="."]
+[node name="Event" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
+[node name="CollisionShape" type="CollisionShape" parent="Event"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.09898, 3.19794, 1.13057 )
 shape = SubResource( 1 )
 script = ExtResource( 5 )
 
-[connection signal="body_entered" from="Area" to="Area/CollisionShape" method="_on_Area_body_entered"]
-[connection signal="body_shape_entered" from="Area" to="Area/CollisionShape" method="_on_Area_body_shape_entered"]
+[node name="textBox" parent="." instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="Event" to="Event/CollisionShape" method="_on_Area_body_entered"]
+[connection signal="body_shape_entered" from="Event" to="Event/CollisionShape" method="_on_Area_body_shape_entered"]
