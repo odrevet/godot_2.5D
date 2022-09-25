@@ -3,7 +3,7 @@ extends KinematicBody
 enum Direction {UP, RIGHT, DOWN, LEFT}
 var direction = Direction.DOWN
 
-export var speed = 10
+export var speed = 14
 export var fall_acceleration = 75
 var velocity = Vector3.ZERO
 export var jump_impulse = 20
