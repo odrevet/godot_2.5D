@@ -36,5 +36,8 @@ script = ExtResource( 5 )
 
 [node name="textBox" parent="." instance=ExtResource( 4 )]
 
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.707107, -0.5, -0.5, 0, 0.707107, -0.707107, 0.707107, 0.5, 0.5, 0, 0, 0 )
+
 [connection signal="body_entered" from="Event" to="Event/CollisionShape" method="_on_Area_body_entered"]
 [connection signal="body_shape_entered" from="Event" to="Event/CollisionShape" method="_on_Area_body_shape_entered"]
