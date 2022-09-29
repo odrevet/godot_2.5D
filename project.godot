@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="godot_2.5D"
-run/main_scene="res://level.tscn"
+run/main_scene="res://rooms/room_150.tscn"
 config/icon="res://icon.png"
 
 [gui]
