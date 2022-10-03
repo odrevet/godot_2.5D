@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://level_mesh.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://hero.tscn" type="PackedScene" id=2]
+[ext_resource path="res://warp.tscn" type="PackedScene" id=3]
 
 [node name="Spatial" type="Spatial"]
 
@@ -21,3 +22,7 @@ __meta__ = {
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.707107, -0.5, -0.5, 0, 0.707107, -0.707107, 0.707107, 0.5, 0.5, 0, 0, 0 )
 light_color = Color( 0.45098, 0.427451, 0.243137, 1 )
+
+[node name="Area" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 9.93343, 8.97513, 26.8025 )
+destination = "res://rooms/room_151.tscn"
